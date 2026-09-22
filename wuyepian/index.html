@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="午夜片 - 深夜影院为您提供午夜电影、恐怖悬疑、犯罪惊悚及冷门佳片的高清在线观看服务。深夜放松，探索未知的观影指南。">
+    <meta name="keywords" content="午夜片,午夜电影,午夜影院,恐怖片,悬疑片,冷门佳片">
+    <title>午夜片 - 深夜影院与悬疑电影高清在线观看指南</title>
+    <style>
+        :root {
+            --bg-dark: #0a0a0a;
+            --bg-card: #141414;
+            --bg-hover: #1f1f1f;
+            --text-main: #ffffff;
+            --text-muted: #a0a0a0;
+            --accent-red: #e50914;
+            --accent-glow: rgba(229, 9, 20, 0.4);
+            --spacing-sm: 8px;
+            --spacing-md: 16px;
+            --spacing-lg: 32px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        /* Utility */
+        .container {
+            width: 100%;
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: var(--spacing-md);
+            border-left: 4px solid var(--accent-red);
+            padding-left: var(--spacing-md);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .section-title a {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .section-title a:hover {
+            color: var(--text-main);
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(10, 10, 10, 0.95);
+            border-bottom: 1px solid #333;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 64px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--accent-red);
+        }
+
+        nav ul {
+            display: flex;
+            gap: var(--spacing-lg);
+        }
+
+        nav a {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--text-main);
+        }
+
+        .search-bar {
+            display: flex;
+            background: #222;
+            border-radius: 4px;
+            padding: 4px;
+        }
+
+        .search-bar input {
+            background: transparent;
+            border: none;
+            color: white;
+            padding: 4px 8px;
+            width: 200px;
+            outline: none;
+        }
+
+        .search-bar button {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            cursor: pointer;
+            padding: 4px 8px;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 500px;
+            background: linear-gradient(to top, var(--bg-dark), transparent), url('https://picsum.photos/seed/nightmovie/1920/600') center/cover no-repeat;
+            display: flex;
+            align-items: flex-end;
+            padding-bottom: var(--spacing-lg);
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero-tag {
+            background-color: var(--accent-red);
+            color: white;
+            padding: 2px 8px;
+            font-size: 0.8rem;
+            border-radius: 2px;
+            display: inline-block;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: var(--spacing-sm);
+            text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: #ddd;
+            margin-bottom: var(--spacing-md);
+            max-width: 600px;
+            text-shadow: 0 1px 4px rgba(0,0,0,0.8);
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-red);
+            color: white;
+            padding: 10px 24px;
+            border-radius: 4px;
+            font-weight: 500;
+            transition: background 0.2s;
+        }
+
+        .btn:hover {
+            background-color: #b20710;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 1px solid #555;
+            margin-left: var(--spacing-sm);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--text-main);
+            background-color: rgba(255,255,255,0.1);
+        }
+
+        /* Grid Layouts */
+        .movie-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-lg);
+        }
+
+        .movie-card {
+            background-color: var(--bg-card);
+            border-radius: 4px;
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+        }
+
+        .movie-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+        }
+
+        .poster-wrapper {
+            position: relative;
+            aspect-ratio: 2/3;
+            overflow: hidden;
+        }
+
+        .poster-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .movie-card:hover .poster-wrapper img {
+            transform: scale(1.05);
+        }
+
+        .play-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+
+        .movie-card:hover .play-overlay {
+            opacity: 1;
+        }
+
+        .play-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(4px);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card-info {
+            padding: var(--spacing-md);
+        }
+
+        .card-title {
+            font-size: 1rem;
+            font-weight: 500;
+            margin-bottom: 4px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .card-meta {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .rating {
+            color: #f5c518;
+        }
+
+        /* Categories */
+        .category-section {
+            padding: var(--spacing-lg) 0;
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--spacing-md);
+        }
+
+        .category-item {
+            background-color: var(--bg-card);
+            padding: var(--spacing-lg) var(--spacing-md);
+            text-align: center;
+            border-radius: 4px;
+            border: 1px solid #222;
+            transition: border-color 0.2s;
+        }
+
+        .category-item:hover {
+            border-color: var(--accent-red);
+        }
+
+        .category-icon {
+            font-size: 1.5rem;
+            margin-bottom: var(--spacing-sm);
+            display: block;
+        }
+
+        .category-name {
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        /* Features / Guide */
+        .features {
+            background-color: #0f0f0f;
+            padding: var(--spacing-lg) 0;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--spacing-lg);
+        }
+
+        .feature-item {
+            padding: var(--spacing-md);
+        }
+
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+            background: #222;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .feature-item h3 {
+            margin-bottom: var(--spacing-sm);
+            font-size: 1.2rem;
+        }
+
+        .feature-item p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: auto;
+            background-color: #000;
+            padding: var(--spacing-lg) 0 var(--spacing-md);
+            border-top: 1px solid #222;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .footer-col h4 {
+            margin-bottom: var(--spacing-md);
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 8px;
+        }
+
+        .footer-col ul li a {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--accent-red);
+        }
+
+        .copyright {
+            text-align: center;
+            color: #555;
+            font-size: 0.85rem;
+            padding-top: var(--spacing-md);
+            border-top: 1px solid #1a1a1a;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .category-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            .nav-wrapper {
+                flex-wrap: wrap;
+                height: auto;
+                padding: var(--spacing-md) 0;
+            }
+            nav {
+                display: none; /* Simplified for mobile demo */
+            }
+            .search-bar {
+                display: none;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .movie-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: var(--spacing-md);
+            }
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo"><span>午夜</span>片</a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">午夜电影</a></li>
+                    <li><a href="#">恐怖悬疑</a></li>
+                    <li><a href="#">冷门佳片</a></li>
+                    <li><a href="#">排行榜</a></li>
+                </ul>
+            </nav>
+            <div class="search-bar">
+                <input type="text" placeholder="搜索午夜片...">
+                <button>🔍</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <span class="hero-tag">今日推荐</span>
+                <h1>《无声夜曲》</h1>
+                <p>在寂静的深夜，一段不为人知的旋律正在回响。这是一部关于心理惊悚与人性深渊的极致探索，适合在午夜时分独自品味的佳作。</p>
+                <div>
+                    <a href="#" class="btn">立即观看</a>
+                    <a href="#" class="btn btn-outline">加入片单</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories -->
+        <section class="container category-section">
+            <div class="section-title">
+                <span>午夜类型</span>
+            </div>
+            <div class="category-grid">
+                <a href="#" class="category-item">
+                    <span class="category-icon">👻</span>
+                    <span class="category-name">恐怖惊悚</span>
+                </a>
+                <a href="#" class="category-item">
+                    <span class="category-icon">🕵️</span>
+                    <span class="category-name">悬疑推理</span>
+                </a>
+                <a href="#" class="category-item">
+                    <span class="category-icon">🩸</span>
+                    <span class="category-name">犯罪暴力</span>
+                </a>
+                <a href="#" class="category-item">
+                    <span class="category-icon">🤫</span>
+                    <span class="category-name">心理压抑</span>
+                </a>
+                <a href="#" class="category-item">
+                    <span class="category-icon">🧛</span>
+                    <span class="category-name">吸血鬼/奇幻</span>
+                </a>
+                <a href="#" class="category-item">
+                    <span class="category-icon">🚗</span>
+                    <span class="category-name">公路电影</span>
+                </a>
+                <a href="#" class="category-item">
+                    <span class="category-icon">🔪</span>
+                    <span class="category-name">血腥猎奇</span>
+                </a>
+                <a href="#" class="category-item">
+                    <span class="category-icon">🧟</span>
+                    <span class="category-name">丧尸末日</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- Featured Movies -->
+        <section class="container category-section">
+            <div class="section-title">
+                <span>热门午夜片</span>
+                <a href="#">查看更多 &gt;</a>
+            </div>
+            <div class="movie-grid">
+                <!-- Movie Card 1 -->
+                <article class="movie-card">
+                    <div class="poster-wrapper">
+                        <img src="https://picsum.photos/seed/horror1/300/450" alt="午夜恐怖电影海报">
+                        <div class="play-overlay">
+                            <div class="play-icon">▶</div>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">镜中夜行</h3>
+                        <div class="card-meta">
+                            <span>2023</span>
+                            <span class="rating">★ 8.5</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Movie Card 2 -->
+                <article class="movie-card">
+                    <div class="poster-wrapper">
+                        <img src="https://picsum.photos/seed/noir2/300/450" alt="午夜悬疑电影海报">
+                        <div class="play-overlay">
+                            <div class="play-icon">▶</div>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">雨夜逃亡</h3>
+                        <div class="card-meta">
+                            <span>2022</span>
+                            <span class="rating">★ 7.9</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Movie Card 3 -->
+                <article class="movie-card">
+                    <div class="poster-wrapper">
+                        <img src="https://picsum.photos/seed/suspense3/300/450" alt="午夜惊悚电影海报">
+                        <div class="play-overlay">
+                            <div class="play-icon">▶</div>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">最后一张底牌</h3>
+                        <div class="card-meta">
+                            <span>2024</span>
+                            <span class="rating">★ 8.2</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Movie Card 4 -->
+                <article class="movie-card">
+                    <div class="poster-wrapper">
+                        <img src="https://picsum.photos/seed/psych4/300/450" alt="午夜心理电影海报">
+                        <div class="play-overlay">
+                            <div class="play-icon">▶</div>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">深渊凝视</h3>
+                        <div class="card-meta">
+                            <span>2021</span>
+                            <span class="rating">★ 9.0</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Movie Card 5 -->
+                <article class="movie-card">
+                    <div class="poster-wrapper">
+                        <img src="https://picsum.photos/seed/crime5/300/450" alt="午夜犯罪电影海报">
+                        <div class="play-overlay">
+                            <div class="play-icon">▶</div>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">沉默的证人</h3>
+                        <div class="card-meta">
+                            <span>2023</span>
+                            <span class="rating">★ 7.5</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Movie Card 6 -->
+                <article class="movie-card">
+                    <div class="poster-wrapper">
+                        <img src="https://picsum.photos/seed/vampire6/300/450" alt="午夜奇幻电影海报">
+                        <div class="play-overlay">
+                            <div class="play-icon">▶</div>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">永夜之吻</h3>
+                        <div class="card-meta">
+                            <span>2022</span>
+                            <span class="rating">★ 8.8</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Movie Card 7 -->
+                <article class="movie-card">
+                    <div class="poster-wrapper">
+                        <img src="https://picsum.photos/seed/zombie7/300/450" alt="午夜丧尸电影海报">
+                        <div class="play-overlay">
+                            <div class="play-icon">▶</div>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">霓虹尸潮</h3>
+                        <div class="card-meta">
+                            <span>2024</span>
+                            <span class="rating">★ 7.2</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Movie Card 8 -->
+                <article class="movie-card">
+                    <div class="poster-wrapper">
+                        <img src="https://picsum.photos/seed/thriller8/300/450" alt="午夜惊悚电影海报">
+                        <div class="play-overlay">
+                            <div class="play-icon">▶</div>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">看不见的客</h3>
+                        <div class="card-meta">
+                            <span>2023</span>
+                            <span class="rating">★ 8.1</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Why Midnight Movies -->
+        <section class="features">
+            <div class="container">
+                <div class="section-title">
+                    <span>为什么选择午夜片？</span>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <div class="feature-icon">🌙</div>
+                        <h3>沉浸式氛围</h3>
+                        <p>深夜环境与恐怖、悬疑类影片完美契合，能最大化地调动观众的感官，带来身临其境的观影体验。</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🧠</div>
+                        <h3>心理深度探索</h3>
+                        <p>午夜片往往包含对人性阴暗面、心理创伤和社会边缘群体的深度剖析，引发观众深层次的思考。</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🛡️</div>
+                        <h3>安全放松指南</h3>
+                        <p>在紧张的剧情中寻找刺激，在安全的环境中体验心跳加速，是现代都市人释放压力的一种独特方式。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="container category-section">
+            <div class="section-title">
+                <span>常见问题</span>
+            </div>
+            <div style="background: var(--bg-card); padding: var(--spacing-lg); border-radius: 4px;">
+                <details style="margin-bottom: var(--spacing-md); cursor: pointer;">
+                    <summary style="font-weight: 500; list-style: none; display: flex; justify-content: space-between; align-items: center;">
+                        午夜片是否包含血腥或过度暴力的内容？
+                        <span>+</span>
+                    </summary>
+                    <p style="margin-top: var(--spacing-sm); color: var(--text-muted);">我们的午夜片库经过筛选，包含不同级别的惊悚内容。建议根据个人承受能力选择观看，未成年人请在监护人陪同下观看。</p>
+                </details>
+                <details style="margin-bottom: var(--spacing-md); cursor: pointer;">
+                    <summary style="font-weight: 500; list-style: none; display: flex; justify-content: space-between; align-items: center;">
+                        如何找到适合深夜观看的影片？
+                        <span>+</span>
+                    </summary>
+                    <p style="margin-top: var(--spacing-sm); color: var(--text-muted);">您可以参考我们的“午夜类型”分类，如心理悬疑、恐怖惊悚等板块。同时，排行榜中的高分影片通常也是不错的选择。</p>
+                </details>
+                <details style="cursor: pointer;">
+                    <summary style="font-weight: 500; list-style: none; display: flex; justify-content: space-between; align-items: center;">
+                        观看午夜片需要付费吗？
+                        <span>+</span>
+                    </summary>
+                    <p style="margin-top: var(--spacing-sm); color: var(--text-muted);">本站提供部分免费午夜片资源，同时也有部分独家内容需要订阅会员服务，具体请查看影片详情页。</p>
+                </details>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>关于午夜片</h4>
+                    <p style="color: #777; font-size: 0.9rem; line-height: 1.8;">
+                        午片片是一个专注于深夜电影、悬疑恐怖及冷门佳片的在线观看平台。我们致力于为寻找独特观影体验的观众提供高质量的影片资源与社区讨论。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>浏览分类</h4>
+                    <ul>
+                        <li><a href="#">恐怖惊悚</a></li>
+                        <li><a href="#">悬疑推理</a></li>
+                        <li><a href="#">犯罪暴力</a></li>
+                        <li><a href="#">心理压抑</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>帮助中心</h4>
+                    <ul>
+                        <li><a href="#">播放器使用</a></li>
+                        <li><a href="#">会员订阅</a></li>
+                        <li><a href="#">版权声明</a></li>
+                        <li><a href="#">联系我们</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关注我们</h4>
+                    <ul>
+                        <li><a href="#">微信公众号</a></li>
+                        <li><a href="#">微博话题</a></li>
+                        <li><a href="#">豆瓣小组</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 午夜片 - 深夜影院. All Rights Reserved. 本站内容仅供学习交流，请勿用于商业用途。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</body>
+                  </html>
