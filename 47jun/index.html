@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="47军历史资料库 - 全面记录中国人民解放军第47军的组建历程、经典战役、革命英雄及历史沿革。提供军史研究、红色文化传承与历史文献查询服务。">
+    <meta name="keywords" content="47军, 中国人民解放军47军, 第47军, 军史, 革命历史, 东北野战军, 衡宝战役, 47军历史沿革">
+    <title>47军-中国人民解放军第47军军史资料与革命纪念馆</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-red: #8B0000;
+            --primary-dark: #5c0000;
+            --gold: #D4AF37;
+            --text-main: #333333;
+            --text-light: #666666;
+            --bg-light: #f9f9f9;
+            --white: #ffffff;
+            --border-color: #e0e0e0;
+            --container-width: 1200px;
+            --spacing-sm: 8px;
+            --spacing-md: 16px;
+            --spacing-lg: 32px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--white);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Utility Classes */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: var(--primary-dark);
+            margin-bottom: var(--spacing-lg);
+            text-align: center;
+            position: relative;
+            padding-bottom: var(--spacing-sm);
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: var(--primary-red);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 24px;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-red);
+            color: var(--white);
+            border: 1px solid var(--primary-red);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            border-color: var(--primary-dark);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--primary-red);
+            border: 1px solid var(--primary-red);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-red);
+            color: var(--white);
+        }
+
+        /* Header */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--primary-red);
+        }
+
+        nav ul {
+            display: flex;
+            gap: var(--spacing-lg);
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-red);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)), url('https://picsum.photos/seed/47army/1600/900.jpg') no-repeat center center/cover;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            padding: 0 var(--spacing-md);
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: var(--spacing-md);
+            font-weight: 800;
+            letter-spacing: 2px;
+        }
+
+        .hero-content p {
+            font-size: 1.25rem;
+            margin-bottom: var(--spacing-lg);
+            opacity: 0.9;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* History Timeline */
+        .history-section {
+            padding: var(--spacing-lg) 0;
+            background-color: var(--bg-light);
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: var(--border-color);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+            box-sizing: border-box;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            right: -10px;
+            background-color: var(--white);
+            border: 4px solid var(--primary-red);
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .left {
+            left: 0;
+        }
+
+        .right {
+            left: 50%;
+        }
+
+        .left::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            right: 30px;
+            border: medium solid var(--white);
+            border-width: 10px 0 10px 10px;
+            border-color: transparent transparent transparent var(--white);
+        }
+
+        .right::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            left: 30px;
+            border: medium solid var(--white);
+            border-width: 10px 10px 10px 0;
+            border-color: transparent var(--white) transparent transparent;
+        }
+
+        .right::after {
+            left: -10px;
+        }
+
+        .content {
+            padding: 20px 30px;
+            background-color: var(--white);
+            position: relative;
+            border-radius: 6px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .content h3 {
+            color: var(--primary-dark);
+            margin-bottom: 8px;
+        }
+
+        .content span {
+            font-size: 0.9em;
+            color: var(--primary-red);
+            font-weight: bold;
+        }
+
+        /* Famous Figures */
+        .figures-section {
+            padding: var(--spacing-lg) 0;
+        }
+
+        .figures-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--spacing-lg);
+        }
+
+        .figure-card {
+            background: var(--white);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .figure-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .figure-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background-color: #ddd;
+        }
+
+        .figure-info {
+            padding: var(--spacing-md);
+        }
+
+        .figure-info h3 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+            color: var(--text-main);
+        }
+
+        .figure-info .rank {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: var(--spacing-sm);
+            display: block;
+        }
+
+        .figure-info p {
+            font-size: 0.95rem;
+            color: var(--text-light);
+        }
+
+        /* Key Battles & Events */
+        .battles-section {
+            padding: var(--spacing-lg) 0;
+            background-color: var(--bg-light);
+        }
+
+        .battles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-md);
+        }
+
+        .battle-card {
+            background: var(--white);
+            padding: var(--spacing-md);
+            border-radius: 6px;
+            border-left: 4px solid var(--primary-red);
+        }
+
+        .battle-card h3 {
+            margin-bottom: var(--spacing-sm);
+            color: var(--primary-dark);
+        }
+
+        .battle-card p {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .battle-tags span {
+            display: inline-block;
+            font-size: 0.8rem;
+            background-color: #f0f0f0;
+            padding: 2px 8px;
+            border-radius: 4px;
+            color: var(--text-light);
+            margin-right: 5px;
+        }
+
+        /* Resources/Docs */
+        .resources-section {
+            padding: var(--spacing-lg) 0;
+        }
+
+        .resource-list {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-md);
+        }
+
+        .resource-item {
+            display: flex;
+            align-items: center;
+            padding: var(--spacing-md);
+            background-color: var(--bg-light);
+            border-radius: 4px;
+            transition: background-color 0.2s;
+        }
+
+        .resource-item:hover {
+            background-color: #eaeaea;
+        }
+
+        .resource-icon {
+            font-size: 1.5rem;
+            margin-right: var(--spacing-md);
+            color: var(--primary-red);
+            min-width: 40px;
+            text-align: center;
+        }
+
+        .resource-details h4 {
+            margin-bottom: 4px;
+            color: var(--text-main);
+        }
+
+        .resource-details p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2b2b2b;
+            color: #ccc;
+            padding: var(--spacing-lg) 0 var(--spacing-md);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            margin-bottom: var(--spacing-md);
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 8px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-red);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            border-top: 1px solid #444;
+            padding-top: var(--spacing-md);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .timeline::after {
+                left: 31px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+
+            .timeline-item::after {
+                left: 21px;
+            }
+
+            .left::before, .right::before {
+                left: 60px;
+                border: medium solid var(--white);
+                border-width: 10px 10px 10px 0;
+                border-color: transparent var(--white) transparent transparent;
+            }
+
+            .left::after, .right::after {
+                left: 21px;
+            }
+
+            .right {
+                left: 0%;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: var(--white);
+                padding: var(--spacing-md);
+                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            }
+
+            nav ul.show {
+                display: flex;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                <span>◆</span> 47军历史研究
+            </a>
+            <div class="mobile-menu-btn" onclick="toggleMenu()">☰</div>
+            <nav>
+                <ul id="nav-list">
+                    <li><a href="#hero" class="active">首页</a></li>
+                    <li><a href="#history">历史沿革</a></li>
+                    <li><a href="#figures">革命英模</a></li>
+                    <li><a href="#battles">著名战役</a></li>
+                    <li><a href="#resources">文献资料</a></li>
+                    <li><a href="#contact">联系我们</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero">
+            <div class="hero-content">
+                <h1>中国人民解放军第47军</h1>
+                <p>从东北战场到抗美援朝，从衡宝战役到戍守边疆。第47军是一支具有光荣革命传统和辉煌战绩的英雄部队。</p>
+                <div style="margin-top: 24px;">
+                    <a href="#history" class="btn btn-primary">了解军史</a>
+                    <a href="#battles" class="btn btn-outline" style="margin-left: 10px;">经典战役</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- History Timeline -->
+        <section id="history" class="history-section">
+            <div class="container">
+                <h2 class="section-title">历史沿革</h2>
+                <div class="timeline">
+                    <div class="timeline-item left">
+                        <div class="content">
+                            <span>1947年</span>
+                            <h3>组建与整编</h3>
+                            <p>东北民主联军独立师等部合编组建为东北民主联军第10纵队，后改编为第47军。初期在东北战场活跃，参与三下江南、四保临江等战役。</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item right">
+                        <div class="content">
+                            <span>1948年</span>
+                            <h3>辽沈战役</h3>
+                            <p>参加辽沈战役，在黑山阻击战中立下赫赫战功，为战役胜利做出了重要贡献。</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item left">
+                        <div class="content">
+                            <span>1949年</span>
+                            <h3>南下与衡宝战役</h3>
+                            <p>部队进军中南，参加衡宝战役，解放湖南大部，为解放全中国立下战功。</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item right">
+                        <div class="content">
+                            <span>1950年</span>
+                            <h3>抗美援朝</h3>
+                            <p>第47军入朝参战，参加秋季攻势和铁原防御战，有效阻击了敌军攻势。</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item left">
+                        <div class="content">
+                            <span>1955年</span>
+                            <h3>授衔与驻防</h3>
+                            <p>全军授衔，部队由机械化转为摩托化。后调防湖南、黑龙江等地，担负生产建设与边防任务。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Famous Figures -->
+        <section id="figures" class="figures-section">
+            <div class="container">
+                <h2 class="section-title">革命英模</h2>
+                <div class="figures-grid">
+                    <article class="figure-card">
+                        <img src="https://picsum.photos/seed/figure1/400/300.jpg" alt="贺晋年将军" class="figure-img">
+                        <div class="figure-info">
+                            <h3>贺晋年</h3>
+                            <span class="rank">上将 | 原第47军首任军长</span>
+                            <p>陕北红军创始人之一，参加过土地革命战争、长征、抗日战争和解放战争，为部队建设作出了卓越贡献。</p>
+                        </div>
+                    </article>
+                    <article class="figure-card">
+                        <img src="https://picsum.photos/seed/figure2/400/300.jpg" alt="梁兴初将军" class="figure-img">
+                        <div class="figure-info">
+                            <h3>梁兴初</h3>
+                            <span class="rank">中将 | 原第47军军长</span>
+                            <p>人称“梁大牙”，著名的虎将。指挥部队在黑山阻击战中重创国民党军廖耀湘兵团，威震敌胆。</p>
+                        </div>
+                    </article>
+                    <article class="figure-card">
+                        <img src="https://picsum.photos/seed/figure3/400/300.jpg" alt="李中权将军" class="figure-img">
+                        <div class="figure-info">
+                            <h3>李中权</h3>
+                            <span class="rank">中将 | 原第47军政委</span>
+                            <p>长期从事部队政治工作，在部队思想政治建设和后勤保障方面有着丰富的经验和卓越的领导才能。</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Battles -->
+        <section id="battles" class="battles-section">
+            <div class="container">
+                <h2 class="section-title">著名战役与事件</h2>
+                <div class="battles-grid">
+                    <div class="battle-card">
+                        <h3>黑山阻击战</h3>
+                        <p>1948年辽沈战役期间，第47军第150师等部在黑山、大虎山地区顽强阻击国民党军廖耀湘兵团，为东北野战军主力围歼敌军赢得了宝贵时间。</p>
+                        <div class="battle-tags">
+                            <span>辽沈战役</span>
+                            <span>阻击战</span>
+                            <span>铁血阻击</span>
+                        </div>
+                    </div>
+                    <div class="battle-card">
+                        <h3>衡宝战役</h3>
+                        <p>1949年，第47军配合兄弟部队在湖南衡宝地区全歼国民党军白崇禧集团主力，解放了湖南南部广大地区。</p>
+                        <div class="battle-tags">
+                            <span>解放战争</span>
+                            <span>中南战役</span>
+                            <span>歼灭战</span>
+                        </div>
+                    </div>
+                    <div class="battle-card">
+                        <h3>上甘岭战役</h3>
+                        <p>1952年，第47军参加了上甘岭战役，在极其残酷的阵地战中，与敌人展开反复争夺，守住了阵地，展现了顽强的战斗作风。</p>
+                        <div class="battle-tags">
+                            <span>抗美援朝</span>
+                            <span>阵地战</span>
+                            <span>坚守</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Resources -->
+        <section id="resources" class="resources-section">
+            <div class="container">
+                <h2 class="section-title">文献与资料</h2>
+                <div class="resource-list">
+                    <a href="#" class="resource-item">
+                        <div class="resource-icon">📚</div>
+                        <div class="resource-details">
+                            <h4>《第47军战史》</h4>
+                            <p>系统梳理了第47军从组建到改编的完整军事历程，包含珍贵历史照片与战役分析。</p>
+                        </div>
+                    </a>
+                    <a href="#" class="resource-item">
+                        <div class="resource-icon">🎖️</div>
+                        <div class="resource-details">
+                            <h4>军史人物传记汇编</h4>
+                            <p>收录了第47军历任军长、政委及英模人物的详细生平介绍，展现官兵风貌。</p>
+                        </div>
+                    </a>
+                    <a href="#" class="resource-item">
+                        <div class="resource-icon">📜</div>
+                        <div class="resource-details">
+                            <h4>红色文物与老照片</h4>
+                            <p>馆藏历史文物展示与老照片数字化修复项目，带您重温峥嵘岁月。</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于47军</h4>
+                    <p style="font-size: 0.9rem; line-height: 1.8;">
+                        本站致力于整理、保存和传播中国人民解放军第47军的革命历史资料，弘扬爱国主义精神，传承红色基因。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速导航</h4>
+                    <ul>
+                        <li><a href="#history">历史沿革</a></li>
+                        <li><a href="#figures">英模人物</a></li>
+                        <li><a href="#battles">经典战役</a></li>
+                        <li><a href="#resources">文献资料</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系方式</h4>
+                    <ul>
+                        <li>邮箱：contact@47army-hist.com</li>
+                        <li>地址：中国·历史资料研究中心</li>
+                        <li>免责声明：本站内容仅供历史研究与学习参考。</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 第47军历史研究资料馆. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const navList = document.getElementById('nav-list');
+            navList.classList.toggle('show');
+        }
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    // Close mobile menu if open
+                    document.getElementById('nav-list').classList.remove('show');
+                    
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
