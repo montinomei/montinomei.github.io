@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="粤语长片 - 深度回顾香港黄金时代的经典电影，提供粤语长片资讯、经典影片赏析、时代背景解析及怀旧观影指南。">
+    <meta name="keywords" content="粤语长片,香港电影,经典老电影,粤语片,邵氏电影,金公主影院">
+    <title>粤语长片 - 香港黄金时代经典电影回顾与鉴赏</title>
+    <style>
+        :root {
+            --primary-color: #c9a961; /* 经典复古金 */
+            --secondary-color: #1a1a1a; /* 深黑 */
+            --accent-color: #d32f2f; /* 水墨红 */
+            --text-main: #333333;
+            --text-light: #666666;
+            --bg-light: #f9f7f2; /* 米黄纸张感 */
+            --bg-white: #ffffff;
+            --spacing-unit: 1rem;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* Header */
+        header {
+            background-color: var(--bg-white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--secondary-color);
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--primary-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--secondary-color);
+            position: relative;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--primary-color);
+            transition: width 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 500px;
+            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('https://picsum.photos/seed/hkfilm/1920/1080.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            color: #fff;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+            font-weight: 700;
+            border-radius: 2px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn:hover {
+            background-color: #b8924d;
+            color: #fff;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 4rem 0;
+        }
+
+        .section-header {
+            margin-bottom: 2.5rem;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 1rem;
+        }
+
+        .section-header h2 {
+            font-size: 1.8rem;
+            color: var(--secondary-color);
+        }
+
+        .section-header p {
+            color: var(--text-light);
+            margin-top: 0.5rem;
+        }
+
+        /* Film Grid */
+        .film-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .film-card {
+            background: var(--bg-white);
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .film-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .film-poster {
+            height: 350px;
+            width: 100%;
+            background-color: #eee;
+            position: relative;
+        }
+
+        .film-poster img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .film-info {
+            padding: 1.5rem;
+        }
+
+        .film-year {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .film-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--secondary-color);
+        }
+
+        .film-director {
+            font-size: 0.9rem;
+            color: var(--primary-color);
+        }
+
+        /* Era Timeline */
+        .era-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            justify-content: center;
+        }
+
+        .era-item {
+            background: var(--bg-white);
+            padding: 2rem;
+            flex: 1 1 300px;
+            max-width: 400px;
+            text-align: center;
+            border: 1px solid #eee;
+            position: relative;
+        }
+
+        .era-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 60px;
+            background: var(--secondary-color);
+            color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.5rem;
+            border: 4px solid var(--bg-light);
+        }
+
+        .era-item h3 {
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Feature Article */
+        .feature-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .feature-image img {
+            border-radius: 4px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .feature-text h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
+        }
+
+        .feature-text p {
+            margin-bottom: 1rem;
+            color: var(--text-light);
+        }
+
+        /* Guide List */
+        .guide-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .guide-item {
+            background: var(--bg-white);
+            padding: 2rem;
+            border-radius: 4px;
+            border-left: 3px solid transparent;
+            transition: border-color 0.3s;
+        }
+
+        .guide-item:hover {
+            border-left-color: var(--primary-color);
+        }
+
+        .guide-item h4 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
+        }
+
+        .guide-item ul li {
+            position: relative;
+            padding-left: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        .guide-item ul li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--secondary-color);
+            color: #fff;
+            padding: 4rem 0 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-col h4 {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-col ul li a {
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: #fff;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #333;
+            color: #666;
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .header-inner {
+                flex-direction: column;
+                height: auto;
+                padding: 1rem 0;
+            }
+
+            nav ul {
+                margin-top: 1rem;
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .feature-layout {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .film-poster {
+                height: 280px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                <span>◆</span> 粤语长片
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#classics">经典推荐</a></li>
+                    <li><a href="#eras">时代风云</a></li>
+                    <li><a href="#guide">观影指南</a></li>
+                    <li><a href="#about">关于我们</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <h1>粤语长片：香港电影的黄金记忆</h1>
+                <p>重温邵氏光影，品味黄金时代的武侠与情怀。从金公主影院到流金岁月，探索粤语长片背后的历史与文化。</p>
+                <a href="#classics" class="btn">开始回顾</a>
+            </div>
+        </section>
+
+        <!-- Intro Section -->
+        <section class="container">
+            <div class="section-header">
+                <h2>什么是粤语长片？</h2>
+                <p>粤语长片是指在香港电影黄金时期制作，且以粤语对白为主要语言，且片长超过60分钟的电影作品。</p>
+            </div>
+            <article style="color: var(--text-light); max-width: 800px;">
+                <p>这一概念通常特指20世纪50年代至80年代期间，在邵氏兄弟有限公司、嘉禾等电影公司大量生产的电影作品。这一时期的电影产量极高，题材广泛，涵盖了武侠、动作、喜剧、文戏等几乎所有类型。粤语长片不仅是香港电影工业的基石，也是华语流行文化的重要组成部分。它们承载了一代人的集体记忆，其独特的叙事节奏、鲜明的角色塑造以及极具时代特色的服化道，至今仍被影迷津津乐道。</p>
+            </article>
+        </section>
+
+        <!-- Classics Section -->
+        <section id="classics" style="background-color: #fff;">
+            <div class="container">
+                <div class="section-header">
+                    <h2>经典影片推荐</h2>
+                    <p>精选粤语长片中的不朽佳作，感受久违的港味情怀。</p>
+                </div>
+                <div class="film-grid">
+                    <!-- Film 1 -->
+                    <article class="film-card">
+                        <div class="film-poster">
+                            <img src="https://picsum.photos/seed/kungfu/400/600.jpg" alt="笑傲江湖海报">
+                        </div>
+                        <div class="film-info">
+                            <span class="film-year">1978年</span>
+                            <h3 class="film-title">笑傲江湖</h3>
+                            <p class="film-director">胡金铨 / 徐克</p>
+                        </div>
+                    </article>
+                    <!-- Film 2 -->
+                    <article class="film-card">
+                        <div class="film-poster">
+                            <img src="https://picsum.photos/seed/hero/400/600.jpg" alt="楚留香海报">
+                        </div>
+                        <div class="film-info">
+                            <span class="film-year">1979年</span>
+                            <h3 class="film-title">楚留香</h3>
+                            <p class="film-director">楚原</p>
+                        </div>
+                    </article>
+                    <!-- Film 3 -->
+                    <article class="film-card">
+                        <div class="film-poster">
+                            <img src="https://picsum.photos/seed/war/400/600.jpg" alt="刺马海报">
+                        </div>
+                        <div class="film-info">
+                            <span class="film-year">1973年</span>
+                            <h3 class="film-title">刺马</h3>
+                            <p class="film-director">张彻</p>
+                        </div>
+                    </article>
+                    <!-- Film 4 -->
+                    <article class="film-card">
+                        <div class="film-poster">
+                            <img src="https://picsum.photos/seed/comedy/400/600.jpg" alt> -->
+                        </div>
+                        <div class="film-info">
+                            <span class="film-year">1975年</span>
+                            <h3 class="film-title">七十二家房客</h3>
+                            <p class="film-director">楚原</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Eras Section -->
+        <section id="eras">
+            <div class="container">
+                <div class="section-header">
+                    <h2>时代风云：粤语长片的演变</h2>
+                    <p>从黑白到彩色，从武侠到社会写实，见证粤语电影的发展历程。</p>
+                </div>
+                <div class="era-list">
+                    <div class=" era-item">
+                        <h3>50年代：初创与繁荣</h3>
+                        <p style="color:var(--text-light); margin-top:10px;">粤语长片的开端，邵氏与长城等公司成立，产量激增，奠定了香港电影工业的基础。</p>
+                    </div>
+                    <div class=" era-item">
+                        <h3>60-70年代：武侠盛世</h3>
+                        <p style="color:var(--text-light); margin-top:10px;">张彻、胡金铨等大师引领武侠新浪潮，大量功夫片和武侠片风靡亚洲，确立了粤语长片的标志性风格。</p>
+                    </div>
+                    <div class=" era-item">
+                        <h3>80年代：新旧交替</h3>
+                        <p style="color:var(--text-light); margin-top:10px;">随着好莱坞电影冲击和香港新浪潮兴起，粤语长片逐渐式微，但仍是许多影迷心中的经典回忆。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Feature Article -->
+        <section id="guide" style="background-color: #fff;">
+            <div class="container">
+                <div class="feature-layout">
+                    <div class="feature-image">
+                        <img src="https://picsum.photos/seed/theatre/600/400.jpg" alt="金公主影院">
+                    </div>
+                    <div class="feature-text">
+                        <h3>流金岁月：在银幕下重温经典</h3>
+                        <p>对于许多老一辈香港人来说，金公主影院、银都戏院等不仅是观看电影的地方，更是社交和娱乐的中心。粤语长片往往放映时间较长，且多为粤语原声，这种独特的观影体验构成了香港独特的都市文化。</p>
+                        <p>如今，虽然流金岁月频道仍在播放，但如何在网络时代找到高清、正版、带字幕的粤语长片资源，成为了许多新影迷关心的问题。本站致力于整理这些珍贵的影像资料，并提供相关的历史背景分析。</p>
+                        <a href="#" style="color: var(--primary-color); font-weight: bold; margin-top: 1rem; display: inline-block;">阅读更多关于流金岁月频道 &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Guide Section -->
+        <section>
+            <div class="container">
+                <div class="section-header">
+                    <h2>粤语长片观影指南</h2>
+                    <p>如果你想开始了解或重温粤语长片，请参考以下建议。</p>
+                </div>
+                <div class="guide-list">
+                    <div class="guide-item">
+                        <h4>如何选择入门影片？</h4>
+                        <ul>
+                            <li>推荐从楚原的《楚留香》系列或胡金铨的《龙门客栈》开始，视听语言成熟。</li>
+                            <li>张彻导演的《五毒》或《独臂刀》是阳刚美学的代表作。</li>
+                            <li>喜剧方面可尝试《七十二家房客》，贴近市井生活。</li>
+                        </ul>
+                    </div>
+                    <div class="guide-item">
+                        <h4>观看时的注意事项</h4>
+                        <ul>
+                            <li>注意方言习惯：粤语长片多使用粤语，部分早期作品无字幕。</li>
+                            <li>时代审美差异：部分影片的武打设计或服化道可能不符合现代审美。</li>
+                            <li>剧情连贯性：部分粤语长片是系列片，建议按顺序观看以获得最佳体验。</li>
+                        </ul>
+                    </div>
+                    <div class="guide-item">
+                        <h4>推荐相关资源</h4>
+                        <ul>
+                            <li>关注香港电影资料馆的数字化计划。</li>
+                            <li>留意流金岁月频道的排期。</li>
+                            <li>参考香港电影学会出版的相关研究书籍。</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>粤语长片</h4>
+                    <p style="color: #aaa; font-size: 0.9rem; line-height: 1.8;">
+                        专注于香港粤语电影的历史回顾与资料整理，致力于传播粤语片文化，让更多人了解那个光影交错的黄金年代。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>栏目导航</h4>
+                    <ul>
+                        <li><a href="#">经典榜单</a></li>
+                        <li><a href="#">导演专区</a></li>
+                        <li><a href="#">演员档案</a></li>
+                        <li><a href="#">怀旧论坛</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>相关链接</h4>
+                    <ul>
+                        <li><a href="#">香港电影资料馆</a></li>
+                        <li><a href="#">邵氏兄弟官网</a></li>
+                        <li><a href="#">流金岁月频道</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 粤语长片回顾站. All Rights Reserved. 本站为非营利性文化介绍网站，部分图片来源于网络，版权归原作者所有。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</body>
+                          </html>
