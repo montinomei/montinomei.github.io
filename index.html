@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="游动速度最快的海洋动物排行榜，深入解析旗鱼、黑鳍金枪鱼等海洋霸主的极速捕猎技巧、身体构造与生存环境。">
+    <meta name="keywords" content="游动速度最快的海洋动物,海洋生物,旗鱼,黑鳍金枪鱼,深海极速动物">
+    <title>游动速度最快的海洋动物-深海极速霸主与捕猎指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #0077be;
+            --secondary-color: #004e80;
+            --accent-color: #ff6b6b;
+            --text-dark: #2c3e50;
+            --text-light: #7f8c8d;
+            --bg-light: #f4f7f6;
+            --card-shadow: 0 4px 15px rgba(0, 119, 190, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header & Nav */
+        header {
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--text-dark);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-dark);
+            transition: var(--transition);
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 60%);
+            animation: pulse 10s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .stat-item h3 {
+            font-size: 2rem;
+            color: var(--accent-color);
+        }
+
+        .stat-item p {
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        /* Main Content */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: var(--text-light);
+        }
+
+        /* Featured Animal - The Champion */
+        .champion-section {
+            background: white;
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 60px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .champion-image {
+            width: 100%;
+            height: 350px;
+            background-color: #eee;
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .champion-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .champion-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .champion-info h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+        }
+
+        .speed-badge {
+            display: inline-block;
+            background: var(--accent-color);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+
+        .champion-info p {
+            margin-bottom: 20px;
+            color: var(--text-light);
+            text-align: justify;
+        }
+
+        .feature-list {
+            margin-top: 20px;
+        }
+
+        .feature-list li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .feature-list li::before {
+            content: '✓';
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        /* Speed Ranks Grid */
+        .ranks-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .animal-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            transition: var(--transition);
+            border: 1px solid rgba(0,0,0,0.03);
+        }
+
+        .animal-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 119, 190, 0.2);
+        }
+
+        .card-header {
+            height: 180px;
+            background-color: #ddd;
+            position: relative;
+        }
+
+        .card-header img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .rank-number {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .card-body {
+            padding: 25px;
+        }
+
+        .card-body h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+
+        .speed-visual {
+            height: 6px;
+            background: #eee;
+            border-radius: 3px;
+            margin: 15px 0;
+            overflow: hidden;
+        }
+
+        .speed-bar {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+            border-radius: 3px;
+        }
+
+        .card-body p {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
+
+        .card-footer {
+            border-top: 1px solid #f0f0f0;
+            padding-top: 15px;
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        /* Mechanism Section */
+        .mechanism-section {
+            background: white;
+            padding: 60px 20px;
+            border-radius: 16px;
+            margin-bottom: 60px;
+        }
+
+        .mechanism-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .mechanism-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .mech-item {
+            text-align: center;
+            padding: 20px;
+            background: var(--bg-light);
+            border-radius: 10px;
+        }
+
+        .mech-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .mech-item h4 {
+            margin-bottom: 10px;
+            color: var(--secondary-color);
+        }
+
+        .mech-item p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            max-width: 800px;
+            margin: 0 auto 60px;
+        }
+
+        .faq-item {
+            background: white;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            background: white;
+            transition: background 0.2s;
+        }
+
+        .faq-question:hover {
+            background: #f9f9f9;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            padding: 0 20px;
+            background: #fafafa;
+            color: var(--text-light);
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+
+        .faq-answer.active {
+            max-height: 200px;
+            padding: 0 20px 20px;
+        }
+
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: white;
+            padding: 60px 20px 20px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col a {
+            color: #bdc3c7;
+            font-size: 0.9rem;
+        }
+
+        .footer-col a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #7f8c8d;
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 1.8rem; }
+            .champion-section { grid-template-columns: 1fr; }
+            .mechanism-grid { grid-template-columns: 1fr; }
+            nav ul { display: none; } /* Simplified mobile nav */
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h20"/><path d="M2 12c0 4 4 8 10 8s10-4 10-8"/><path d="M12 20v-8"/><path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"/></svg>
+                <span>海洋极速百科</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#champion">冠军</a></li>
+                    <li><a href="#ranks">排行榜</a></li>
+                    <li><a href="#mechanism">原理</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>探索游动速度最快的海洋动物</h1>
+            <p>从深海中的猎手到广袤洋面的霸主，揭秘海洋生物如何突破水的阻力，在瞬息万变的大海中创造极速奇迹。</p>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <h3>110 km/h</h3>
+                    <p>海洋第一速度纪录</p>
+                </div>
+                <div class="stat-item">
+                    <h3>15</h3>
+                    <p>主要高速掠食者</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <!-- Featured Champion -->
+        <section id="champion" class="champion-section">
+            <div class="champion-image">
+                <img src="https://picsum.photos/seed/chevronbill/600/400" alt="旗鱼">
+            </div>
+            <div class="champion-info">
+                <span class="speed-badge">海洋极速之王</span>
+                <h2>旗鱼</h2>
+                <p><strong>短鳍旗鱼</strong>（学名：Istiophorus platypterus）是公认的游动速度最快的海洋动物。它们不仅能以惊人的速度冲刺，还能在极短时间内将速度提升至极限，是海洋中无可争议的短跑冠军。</p>
+                <ul class="feature-list">
+                    <li>爆发速度可达 110 公里/小时</li>
+                    <li>拥有流线型的吻部，大幅减少水的阻力</li>
+                    <li>体温恒定，适应深水冷水域</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Ranks Grid -->
+        <section id="ranks" class="section-title">
+            <h2>海洋极速霸主排行榜</h2>
+            <p>除了旗鱼，还有哪些海洋生物拥有令人惊叹的爆发力？</p>
+        </section>
+
+        <div class="ranks-grid">
+            <!-- Card 2 -->
+            <article class="animal-card">
+                <div class="card-header">
+                    <span class="rank-number">2</span>
+                    <img src="https://picsum.photos/seed/bluefin/400/300" alt="黑鳍金枪鱼">
+                </div>
+                <div class="card-body">
+                    <h3>黑鳍金枪鱼</h3>
+                    <p>一种大型远洋性鱼类，以惊人的耐力和持续高速游动著称。它们是长途迁徙的高手，常年在各大洋中追逐洋流。</p>
+                    <div class="speed-visual">
+                        <div class="speed-bar" style="width: 90%;"></div>
+                    </div>
+                    <div class="card-footer">最高时速约 70-80 km/h</div>
+                </div>
+            </article>
+
+            <!-- Card 3 -->
+            <article class="animal-card">
+                <div class="card-header">
+                    <span class="rank-number">3</span>
+                    <img src="https://picsum.photos/seed/swordfish/400/300" alt="剑鱼">
+                </div>
+                <div class="card-body">
+                    <h3>剑鱼</h3>
+                    <p>拥有长而扁平的吻部（剑），在捕猎时利用这一武器刺穿猎物。它们的身体结构非常适合高速长距离冲刺。</p>
+                    <div class="speed-visual">
+                        <div class="speed-bar" style="width: 85%;"></div>
+                    </div>
+                    <div class="card-footer">最高时速约 80-90 km/h</div>
+                </div>
+            </article>
+
+            <!-- Card 4 -->
+            <article class="animal-card">
+                <div class="card-header">
+                    <span class="rank-number">4</span>
+                    <img src="https://picsum.photos/seed/oceanicwhite/400/300" alt="大白鲨">
+                </div>
+                <div class="card-body">
+                    <h3>大白鲨</h3>
+                    <p>作为顶级掠食者，大白鲨拥有强大的肌肉和流线型身体。虽然爆发速度略逊于旗鱼，但其持续巡航速度极高。</p>
+                    <div class="speed-visual">
+                        <div class="speed-bar" style="width: 70%;"></div>
+                    </div>
+                    <div class="card-footer">巡航速度约 56 km/h</div>
+                </div>
+            </article>
+        </div>
+
+        <!-- Mechanism Section -->
+        <section id="mechanism" class="mechanism-section">
+            <div class="mechanism-container">
+                <div class="section-title" style="text-align: left; margin-bottom: 20px;">
+                    <h2>极速背后的生理奥秘</h2>
+                    <p>这些海洋生物是如何在水中实现高速移动的？</p>
+                </div>
+                <div class="mechanism-grid">
+                    <div class="mech-item">
+                        <span class="mech-icon">🌊</span>
+                        <h4>流线型体态</h4>
+                        <p>它们拥有完美的水滴状身体，皮肤光滑，几乎不留气泡，最大限度地减少水的阻力。</p>
+                    </div>
+                    <div class="mech-item">
+                        <span class="mech-icon">⚡</span>
+                        <h4>强力尾鳍推进</h4>
+                        <p>巨大的新月形尾鳍像船桨一样提供强大的推力，配合灵活的脊柱摆动，实现高效推进。</p>
+                    </div>
+                    <div class="mech-item">
+                        <span class="mech-icon">❄️</span>
+                        <h4>温血机制</h4>
+                        <p>部分高速鱼类（如金枪鱼）能保持体温高于海水，这使得它们在寒冷水域也能爆发最大能量。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="faq-section">
+            <div class="section-title">
+                <h2>常见问题解答</h2>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">海豚游得比旗鱼快吗？</div>
+                <div class="faq-answer">
+                    海豚通常在短距离冲刺时比旗鱼快，但在持续的高速游动能力和爆发极限上，海洋鱼类（特别是旗鱼）通常更胜一筹。海豚属于哺乳动物，其游动机制与鱼类有所不同。
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">为什么旗鱼能游得这么快？</div>
+                <div class="faq-answer">
+                    旗鱼拥有特殊的“吻部”结构，这不仅是武器，更是空气动力学设计。它们拥有巨大的胸鳍，可以在高速游动时收起以减少阻力，并在需要时瞬间展开进行机动。
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">这些动物在陆地上能跑得快吗？</div>
+                <div class="faq-answer">
+                    它们无法在陆地上维持高速移动。作为水生生物，它们缺乏支撑身体重量的四肢，且皮肤干燥后无法保持弹性，一旦离开水，高速运动能力将完全丧失。
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>海洋极速百科</h4>
+                <p style="color: #bdc3c7; font-size: 0.9rem;">致力于探索海洋生物的生存智慧与极限运动能力，提供最准确的科学数据。</p>
+            </div>
+            <div class="footer-col">
+                <h4>快速导航</h4>
+                <ul>
+                    <li><a href="#champion">冠军物种</a></li>
+                    <li><a href="#ranks">排行榜</a></li>
+                    <li><a href="#mechanism">生理机制</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>相关主题</h4>
+                <ul>
+                    <li><a href="#">深海生物</a></li>
+                    <li><a href="#">海洋迁徙</a></li>
+                    <li><a href="#">保护现状</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2023 海洋极速百科. All Rights Reserved.
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Accordion Logic
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', () => {
+                    const answer = question.nextElementSibling;
+                    const isActive = answer.classList.contains('active');
+                    
+                    // Close all other answers
+                    document.querySelectorAll('.faq-answer').forEach(item => {
+                        item.classList.remove('active');
+                    });
+                    
+                    // Toggle current answer
+                    if (!isActive) {
+                        answer.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+  </html>
