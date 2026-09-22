@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>贴身兵王笑笑星儿 - 全网最全在线阅读与剧情解析平台</title>
+    <meta name="description" content="贴身兵王笑笑星儿提供贴身兵王笑笑星儿全集免费阅读、最新章节更新、精彩剧情解析及角色介绍。收录经典都市战神小说，支持手机端与电脑端在线阅读。">
+    <meta name="keywords" content="贴身兵王笑笑星儿,贴身兵王,笑笑星儿小说,在线阅读,免费小说,都市小说,战神小说">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #d32f2f;
+            --secondary-color: #f5f5f5;
+            --text-dark: #333333;
+            --text-gray: #666666;
+            --text-light: #999999;
+            --accent-color: #ff6b6b;
+            --bg-body: #f9f9f9;
+            --bg-white: #ffffff;
+            --border-radius: 8px;
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--bg-white);
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            background: var(--primary-color);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 14px;
+            vertical-align: middle;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            transition: all 0.3s;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid var(--text-light);
+            color: var(--text-dark);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #b71c1c;
+            box-shadow: 0 4px 12px rgba(211, 47, 47, 0.3);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #2c0e0e 0%, #4a1c1c 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .hero h1 {
+            font-size: 36px;
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: rgba(255,255,255,0.8);
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        .hero-tags {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: rgba(255,255,255,0.1);
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        /* Main Layout */
+        .main-content {
+            display: grid;
+            grid-template-columns: 2.5fr 1fr;
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        /* Book Section */
+        .book-section {
+            background: var(--bg-white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-sm);
+            overflow: hidden;
+            padding: 30px;
+        }
+
+        .book-header {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 30px;
+        }
+
+        .book-cover {
+            width: 180px;
+            height: 260px;
+            background-color: #ddd;
+            border-radius: 4px;
+            object-fit: cover;
+            flex-shrink: 0;
+            box-shadow: var(--shadow-md);
+        }
+
+        .book-info h2 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            color: var(--text-dark);
+        }
+
+        .book-meta {
+            color: var(--text-gray);
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .book-meta span {
+            margin-right: 15px;
+        }
+
+        .book-desc {
+            color: var(--text-dark);
+            margin-bottom: 25px;
+            line-height: 1.8;
+            text-align: justify;
+        }
+
+        .book-stats {
+            display: flex;
+            gap: 20px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-num {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: var(--text-light);
+        }
+
+        .chapter-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .chapter-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            background: var(--bg-body);
+            border-radius: var(--border-radius);
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+
+        .chapter-item:hover {
+            background: #fff0f0;
+            transform: translateX(5px);
+        }
+
+        .chapter-title {
+            font-weight: 500;
+        }
+
+        .chapter-time {
+            font-size: 12px;
+            color: var(--text-light);
+        }
+
+        .chapter-new {
+            background: var(--primary-color);
+            color: white;
+            font-size: 10px;
+            padding: 2px 6px;
+            border-radius: 3px;
+            margin-left: 10px;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .widget {
+            background: var(--bg-white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-sm);
+            padding: 20px;
+        }
+
+        .widget-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary-color);
+            display: inline-block;
+        }
+
+        .rank-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px dashed #eee;
+            font-size: 14px;
+        }
+
+        .rank-list li:last-child {
+            border-bottom: none;
+        }
+
+        .rank-num {
+            font-weight: 700;
+            color: var(--text-light);
+            margin-right: 10px;
+            width: 20px;
+        }
+
+        .rank-list li:nth-child(1) .rank-num { color: #ff4757; }
+        .rank-list li:nth-child(2) .rank-num { color: #ffa502; }
+        .rank-list li:nth-child(3) .rank-num { color: #2ed573; }
+
+        .character-list {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+
+        .char-card {
+            text-align: center;
+            padding: 10px;
+            border-radius: 6px;
+            background: var(--bg-body);
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .char-card:hover {
+            background: #fff0f0;
+        }
+
+        .char-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin: 0 auto 5px;
+            background-color: #ddd;
+        }
+
+        .char-name {
+            font-size: 12px;
+            font-weight: 600;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* Footer */
+        footer {
+            background: #222;
+            color: #999;
+            padding: 50px 0 20px;
+            margin-top: auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h3 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            font-size: 13px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 15px;
+                font-size: 14px;
+            }
+
+            .hero h1 {
+                font-size: 28px;
+            }
+
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+
+            .book-header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .book-stats {
+                justify-content: center;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                <span>READ</span> 贴身兵王笑笑星儿
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">章节目录</a></li>
+                    <li><a href="#">角色介绍</a></li>
+                    <li><a href="#">书评论坛</a></li>
+                    <li><a href="#">推荐书单</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button class="btn btn-outline">登录</button>
+                <button class="btn btn-primary">注册</button>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>贴身兵王笑笑星儿</h1>
+            <p>绝世兵王回归都市，面对千娇百媚的豪门大小姐，是潜伏还是爆发？一段惊心动魄的贴身守护之旅，即将开启。</p>
+            <div class="hero-tags">
+                <span class="tag">都市异能</span>
+                <span class="tag">热血爽文</span>
+                <span class="tag">豪门恩怨</span>
+                <span class="tag">强取豪夺</span>
+            </div>
+        </div>
+    </section>
+
+    <main class="container main-content">
+        <!-- Left Content -->
+        <section class="book-section">
+            <div class="book-header">
+                <img src="https://picsum.photos/seed/bookcover/180/260" alt="贴身兵王笑笑星儿封面" class="book-cover">
+                <div class="book-info">
+                    <h2>贴身兵王笑笑星儿</h2>
+                    <div class="book-meta">
+                        <span>作者：笑笑星儿</span>
+                        <span>状态：连载中</span>
+                        <span>字数：1,024,500</span>
+                    </div>
+                    <div class="book-stats">
+                        <div class="stat-item">
+                            <div class="stat-num">89.5万</div>
+                            <div class="stat-label">总推荐</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-num">4.8</div>
+                            <div class="stat-label">评分</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-num">1.2万</div>
+                            <div class="stat-label">书友</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="book-desc">
+                <p>曾经是令世界闻名的顶级兵王，代号“修罗”。在一次执行特殊任务后，他选择退役回归都市，本想做一个普普通通的保安，却因命运的安排，成为了豪门千金林笑笑的贴身保镖。</p>
+                <p style="margin-top: 10px;">面对家族的打压、商业对手的阴谋，以及林笑笑身边层出不穷的桃花劫，林笑如何运用他的智慧和武力，一步步揭开当年的秘密，守护心爱之人，登临世界之巅？这是一场关于守护、复仇与爱情的都市传奇。</p>
+            </div>
+
+            <div style="margin-bottom: 20px;">
+                <button class="btn btn-primary" style="padding: 12px 40px; font-size: 16px;">立即阅读</button>
+                <button class="btn btn-outline" style="margin-left: 10px;">加入书架</button>
+            </div>
+
+            <h3 style="margin-bottom: 15px; font-size: 18px; border-left: 4px solid var(--primary-color); padding-left: 10px;">最新章节</h3>
+            <div class="chapter-list">
+                <a href="#" class="chapter-item">
+                    <span class="chapter-title">第2458章：谈判桌上的博弈</span>
+                    <span class="chapter-time">今日 10:30</span>
+                </a>
+                <a href="#" class="chapter-item">
+                    <span class="chapter-title">第2457章：深夜的访客</span>
+                    <span class="chapter-time">昨日 22:15</span>
+                </a>
+                <a href="#" class="chapter-item">
+                    <span class="chapter-title">第2456章：神秘组织的召唤</span>
+                    <span class="chapter-time">昨日 18:45</span>
+                </a>
+                <a href="#" class="chapter-item">
+                    <span class="chapter-title">第2455章：旧地重游</span>
+                    <span class="chapter-time">前天 14:20</span>
+                </a>
+                <a href="#" class="chapter-item">
+                    <span class="chapter-title">第2454章：新的危机</span>
+                    <span class="chapter-time">前天 09:10</span>
+                </a>
+            </div>
+            <div style="text-align: center; margin-top: 20px;">
+                <a href="#" style="color: var(--text-gray); font-size: 14px;">查看更多章节 &raquo;</a>
+            </div>
+        </section>
+
+        <!-- Right Sidebar -->
+        <aside class="sidebar">
+            <div class="widget">
+                <h3 class="widget-title">热门分类</h3>
+                <ul class="rank-list">
+                    <li><a href="#">都市修仙</a> <span>1.2w</span></li>
+                    <li><a href="#">豪门总裁</a> <span>9800</span></li>
+                    <li><a href="#">特种兵王</a> <span>8500</span></li>
+                    <li><a href="#">绝世高手</a> <span>7200</span></li>
+                    <li><a href="#">赘婿逆袭</a> <span>6100</span></li>
+                </ul>
+            </div>
+
+            <div class="widget">
+                <h3 class="widget-title">作者推荐</h3>
+                <ul class="rank-list">
+                    <li><a href="#">笑笑星儿</a> <span>作者</span></li>
+                    <li><a href="#">叶辰</a> <span>相关</span></li>
+                    <li><a href="#">林笑笑</a> <span>角色</span></li>
+                    <li><a href="#">都市战神</a> <span>相关</span></li>
+                    <li><a href="#">贴身保镖</a> <span>相关</span></li>
+                </ul>
+            </div>
+
+            <div class="widget">
+                <h3 class="widget-title">主要角色</h3>
+                <div class="character-list">
+                    <div class="char-card">
+                        <img src="https://picsum.photos/seed/char1/50/50" class="char-avatar" alt="林笑笑">
+                        <div class="char-name">林笑笑</div>
+                    </div>
+                    <div class="char-card">
+                        <img src="https://picsum.photos/seed/char2/50/50" class="char-avatar" alt="林笑">
+                        <div class="char-name">林笑</div>
+                    </div>
+                    <div class="char-card">
+                        <img src="https://picsum.photos/seed/char3/50/50" class="char-avatar" alt="叶倾城">
+                        <div class="char-name">叶倾城</div>
+                    </div>
+                    <div class="char-card">
+                        <img src="https://picsum.photos/seed/char4/50/50" class="char-avatar" alt="王天龙">
+                        <div class="char-name">王天龙</div>
+                    </div>
+                    <div class="char-card">
+                        <img src="https://picsum.photos/seed/char5/50/50" class="char-avatar" alt="神秘长老">
+                        <div class="char-name">神秘长老</div>
+                    </div>
+                    <div class="char-card">
+                        <img src="https://picsum.photos/seed/char6/50/50" class="char-avatar" alt="苏沐橙">
+                        <div class="char-name">苏沐橙</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="widget">
+                <h3 class="widget-title">读者书评</h3>
+                <div style="font-size: 13px; color: #666; margin-bottom: 10px;">
+                    <p><strong>书友A：</strong>剧情紧凑，林笑的战斗力爆表，是典型的爽文风格！</p>
+                </div>
+                <div style="font-size: 13px; color: #666;">
+                    <p><strong>书友B：</strong>笑笑星儿大大的文笔很细腻，期待后续发展。</p>
+                </div>
+            </div>
+        </aside>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>关于贴身兵王笑笑星儿</h3>
+                    <p style="font-size: 13px; line-height: 1.8;">本站提供笑笑星儿小说《贴身兵王》的在线阅读服务，致力于为读者提供最优质的阅读体验。所有章节均由网友上传，版权归原作者所有。</p>
+                </div>
+                <div class="footer-col">
+                    <h3>快速导航</h3>
+                    <ul>
+                        <li><a href="#">首页</a></li>
+                        <li><a href="#">排行榜</a></li>
+                        <li><a href="#">分类书库</a></li>
+                        <li><a href="#">全本小说</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>帮助中心</h3>
+                    <ul>
+                        <li><a href="#">登录注册</a></li>
+                        <li><a href="#">意见反馈</a></li>
+                        <li><a href="#">版权声明</a></li>
+                        <li><a href="#">免责声明</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>关注我们</h3>
+                    <p style="font-size: 13px;">扫描二维码关注公众号</p>
+                    <div style="background: white; width: 100px; height: 100px; margin-top: 10px; display: flex; align-items: center; justify-content: center; color: #333;">QR Code</div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 贴身兵王笑笑星儿阅读网 版权所有 | 漫画下载请使用官方渠道</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
