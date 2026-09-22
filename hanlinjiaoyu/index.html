@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="翰林教育官网提供专业的成人学历提升、职业资格认证及企业培训服务。涵盖自考、成考、网教等多种升学途径，致力于打造一站式终身学习服务平台。">
+    <meta name="keywords" content="翰林教育,学历提升,成人自考,职业培训,在线教育">
+    <title>翰林教育-专业成人学历提升与职业培训服务平台</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c5282;
+            --secondary-color: #3182ce;
+            --accent-color: #f6ad55;
+            --text-main: #2d3748;
+            --text-light: #718096;
+            --bg-light: #f7fafc;
+            --white: #ffffff;
+            --radius-md: 8px;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+            --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            color: var(--text-main);
+            line-height: 1.6;
+            background-color: var(--white);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Utility Classes */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: var(--white);
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--secondary-color);
+            border-color: var(--secondary-color);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            color: var(--text-main);
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--white);
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--secondary-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-main);
+            position: relative;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--secondary-color);
+        }
+
+        .nav-actions {
+            display: flex;
+            gap: 15px;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #ebf8ff 0%, #bee3f8 100%);
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 3rem;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .hero-text p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 30px;
+        }
+
+        .hero-image {
+            position: relative;
+        }
+
+        .hero-image img {
+            width: 100%;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .stats-bar {
+            display: flex;
+            gap: 40px;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(0,0,0,0.1);
+        }
+
+        .stat-item h3 {
+            font-size: 2rem;
+            color: var(--secondary-color);
+        }
+
+        .stat-item p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: var(--bg-light);
+            padding: 30px;
+            border-radius: var(--radius-md);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 15px;
+            font-size: 1.25rem;
+        }
+
+        .feature-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Programs Section */
+        .programs {
+            padding: 80px 0;
+            background-color: var(--bg-light);
+        }
+
+        .program-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .program-card {
+            background: var(--white);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: box-shadow 0.3s;
+        }
+
+        .program-card:hover {
+            box-shadow: var(--shadow-md);
+        }
+
+        .program-img {
+            height: 200px;
+            background-color: #cbd5e0;
+            position: relative;
+        }
+        
+        .program-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .program-tag {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: var(--accent-color);
+            color: var(--white);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .program-content {
+            padding: 25px;
+        }
+
+        .program-content h3 {
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+
+        .program-content p {
+            color: var(--text-light);
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+
+        .program-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #edf2f7;
+        }
+
+        .program-link {
+            color: var(--secondary-color);
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* Process Section */
+        .process {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .process-steps::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 50px;
+            right: 50px;
+            height: 2px;
+            background-color: #e2e8f0;
+            z-index: 0;
+        }
+
+        .step-item {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            flex: 1;
+        }
+
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background-color: var(--white);
+            border: 2px solid var(--secondary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .step-item h4 {
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .step-item p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            padding: 0 10px;
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: 80px 0;
+            background-color: var(--bg-light);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        details {
+            background-color: var(--white);
+            margin-bottom: 15px;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+            overflow: hidden;
+        }
+
+        summary {
+            padding: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            transition: transform 0.3s;
+        }
+
+        details[open] summary::after {
+            transform: rotate(45deg);
+        }
+
+        .faq-content {
+            padding: 0 20px 20px;
+            color: var(--text-light);
+            border-top: 1px solid #edf2f7;
+            margin-top: 10px;
+            padding-top: 15px;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+        }
+
+        .cta-section p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .cta-btn {
+            background-color: var(--white);
+            color: var(--primary-color);
+        }
+
+        .cta-btn:hover {
+            background-color: var(--accent-color);
+            color: var(--white);
+            border-color: var(--white);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a202c;
+            color: #cbd5e0;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #2d3748;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-wrapper {
+                position: relative;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            nav {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: var(--white);
+                box-shadow: var(--shadow-md);
+                padding: 20px;
+            }
+
+            nav.active {
+                display: block;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+
+            .stats-bar {
+                justify-content: center;
+            }
+
+            .process-steps {
+                flex-direction: column;
+                gap: 40px;
+            }
+
+            .process-steps::before {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--primary-color)"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                翰林<span>教育</span>
+            </a>
+            <div class="mobile-menu-btn" onclick="toggleMenu()">☰</div>
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#programs">热门项目</a></li>
+                    <li><a href="#process">学习流程</a></li>
+                    <li><a href="#features">优势服务</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+            <div class="nav-actions">
+                <a href="#" class="btn btn-outline" style="padding: 8px 20px; font-size: 0.9rem;">登录</a>
+                <a href="#" class="btn btn-primary" style="padding: 8px 20px; font-size: 0.9rem;">免费咨询</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <h1>提升学历，改变未来<br>一站式成人教育服务平台</h1>
+                    <p>翰林教育深耕成人学历提升领域，为您提供自考、成考、网教等多种升学途径。专业教务团队全程指导，助您轻松圆梦大学。</p>
+                    <div style="display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; @media(min-width: 769px){justify-content: flex-start;}">
+                        <a href="#programs" class="btn btn-primary">查看招生简章</a>
+                        <a href="#process" class="btn btn-outline">了解学习流程</a>
+                    </div>
+                    <div class="stats-bar">
+                        <div class="stat-item">
+                            <h3>10万+</h3>
+                            <p>累计学员</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>98%</h3>
+                            <p>通过率</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>50+</h3>
+                            <p>合作院校</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="https://picsum.photos/seed/education2/600/400" alt="学员学习场景">
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="features">
+            <div class="container">
+                <div class="section-title">
+                    <h2>为什么选择翰林教育</h2>
+                    <p>我们不仅仅是学历提升的提供者，更是您职业生涯的规划师</p>
+                </div>
+                <div class="features-grid">
+                    <article class="feature-card">
+                        <div class="feature-icon">🎓</div>
+                        <h3>正规院校认证</h3>
+                        <p>所有合作院校均为国家承认的正规高等院校，学信网可查，学历含金量高。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">📚</div>
+                        <h3>专业教务辅导</h3>
+                        <p>配备专职班主任，提供从报名、注册、考试到论文答辩的全流程跟踪服务。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">💰</div>
+                        <h3>灵活学习方式</h3>
+                        <p>支持线上学习与线下辅导相结合，工学矛盾小，利用碎片化时间即可完成学业。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">🤝</div>
+                        <h3>全程无忧服务</h3>
+                        <p>提供免费学历咨询、免试入学名额申请、考前资料包及学历档案管理服务。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Programs Section -->
+        <section id="programs" class="programs">
+            <div class="container">
+                <div class="section-title">
+                    <h2>热门升学项目</h2>
+                    <p>多种学历提升形式，满足不同人群的深造需求</p>
+                </div>
+                <div class="program-grid">
+                    <!-- Item 1 -->
+                    <article class="program-card">
+                        <div class="program-img">
+                            <img src="https://picsum.photos/seed/university1/400/300" alt="成人高考">
+                            <span class="program-tag">高通过率</span>
+                        </div>
+                        <div class="program-content">
+                            <h3>成人高考</h3>
+                            <p>国家承认学历，每年一次入学机会，学习形式灵活，适合在职人员。</p>
+                            <div class="program-meta">
+                                <span>学制：2.5年</span>
+                                <span>层次：高起专/专升本</span>
+                            </div>
+                            <a href="#" class="program-link">查看详情 &rarr;</a>
+                        </div>
+                    </article>
+                    <!-- Item 2 -->
+                    <article class="program-card">
+                        <div class="program-img">
+                            <img src="https://picsum.photos/seed/university2/400/300" alt="自考">
+                            <span class="program-tag">含金量高</span>
+                        </div>
+                        <div class="program-content">
+                            <h3>自学考试</h3>
+                            <p>宽进严出，没有入学门槛，所有科目考完即可申请毕业，最快1.5年拿证。</p>
+                            <div class="program-meta">
+                                <span>学制：1.5-2年</span>
+                                <span>难度：中等</span>
+                            </div>
+                            <a href="#" class="program-link">查看详情 &rarr;</a>
+                        </div>
+                    </article>
+                    <!-- Item 3 -->
+                    <article class="program-card">
+                        <div class="program-img">
+                            <img src="https://picsum.photos/seed/university3/400/300" alt="国家开放大学">
+                            <span class="program-tag">免试入学</span>
+                        </div>
+                        <div class="program-content">
+                            <h3>国家开放大学</h3>
+                            <p>教育部直属，免试入学，网上学习，期末考试简单，适合零基础学员。</p>
+                            <div class="program-meta">
+                                <span>学制：2.5年</span>
+                                <span>难度：简单</span>
+                            </div>
+                            <a href="#" class="program-link">查看详情 &rarr;</a>
+                        </div>
+                    </article>
+                </div>
+                <div style="text-align: center; margin-top: 40px;">
+                    <a href="#" class="btn btn-outline">查看全部专业</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process Section -->
+        <section id="process" class="process">
+            <div class="container">
+                <div class="section-title">
+                    <h2>入学学习流程</h2>
+                    <p>简单四步，轻松开启您的学历提升之旅</p>
+                </div>
+                <div class="process-steps">
+                    <div class="step-item">
+                        <div class="step-number">1</div>
+                        <h4>在线咨询</h4>
+                        <p>点击免费咨询，了解自身学历情况及适合的报考专业。</p>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">2</div>
+                        <h4>提交资料</h4>
+                        <p>填写报名表，提交身份证、照片等电子版材料。</p>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">3</div>
+                        <h4>入学注册</h4>
+                        <p>审核通过后缴纳学费，完成学籍注册，领取教材。</p>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">4</div>
+                        <h4>参加考试</h4>
+                        <p>参加学校组织的期末考试，按时完成作业与论文。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="faq">
+            <div class="container">
+                <div class="section-title">
+                    <h2>常见问题解答</h2>
+                    <p>关于翰林教育及学历提升的疑问，这里都有答案</p>
+                </div>
+                <div class="faq-container">
+                    <details>
+                        <summary>没有高中毕业证可以报名吗？</summary>
+                        <div class="faq-content">
+                            可以。报考高起专（高中起点升专科）通常要求具有高中毕业文化程度。如果您没有正规高中毕业证，只要年满18周岁或持有初中毕业证，通常可以通过成人高考或国家开放大学进行报名，部分院校政策相对宽松。
+                        </div>
+                    </details>
+                    <details>
+                        <summary>自考和成考哪个含金量高？</summary>
+                        <div class="faq-content">
+                            从法律效力和社会认可度上来说，自考、成考和国家开放大学的毕业证书都是国家承认的学历，学信网可查。自考的难度最大，含金量相对较高；成考和国家开放大学入学相对容易，适合工作繁忙、基础较弱的学员。
+                        </div>
+                    </details>
+                    <details>
+                        <summary>学籍是在哪里查询？</summary>
+                        <div class="faq-content">
+                            学信网（www.chsi.com.cn）是中国高等教育学生信息网，是教育部指定的学历查询唯一网站。您可以在注册学信网账号后，在学籍查询栏目中查看您的在读学籍信息。
+                        </div>
+                    </details>
+                    <details>
+                        <summary>学费大概需要多少？</summary>
+                        <div class="faq-content">
+                            学费因报考院校、专业及学习形式（函授/业余）而异。一般来说，高起专和专升本的学费每年在2000元至3000元之间，总学费在5000元至8000元左右。具体费用请咨询我们的招生老师。
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="container">
+                <h2>现在报名，抢占免试名额</h2>
+                <p>2024年秋季招生即将截止，名额有限，立即联系顾问获取免费测评报告。</p>
+                <a href="#" class="btn cta-btn">立即咨询报名</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>翰林教育</h4>
+                    <p style="font-size: 0.9rem; line-height: 1.6;">专注成人学历提升与职业资格培训，致力于为每一位学员提供专业、高效、贴心的教育服务。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#">关于我们</a></li>
+                        <li><a href="#">热门专业</a></li>
+                        <li><a href="#">招生简章</a></li>
+                        <li><a href="#">学员案例</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>热门专业</h4>
+                    <ul>
+                        <li><a href="#">行政管理</a></li>
+                        <li><a href="#">人力资源管理</a></li>
+                        <li><a href="#">工商管理</a></li>
+                        <li><a href="#">学前教育</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系方式</h4>
+                    <ul>
+                        <li>电话：400-888-8888</li>
+                        <li>邮箱：service@hanlin-edu.com</li>
+                        <li>地址：某某市某某区教育园区</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 翰林教育 版权所有 | 仅供演示使用，非真实机构网站</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const nav = document.getElementById('mainNav');
+            nav.classList.toggle('active');
+        }
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    // Close mobile menu if open
+                    document.getElementById('mainNav').classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+  </html>
